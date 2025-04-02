@@ -1,39 +1,17 @@
-import Link from "next/link"
+"use client";
 
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
+import Link from "next/link";
 
-export default function IndexPage() {
+export default function Home() {
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          Beautifully designed components <br className="hidden sm:inline" />
-          built with Radix UI and Tailwind CSS.
-        </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
-        </p>
-      </div>
-      <div className="flex gap-4">
-        <Link
-          href={siteConfig.links.docs}
-          target="_blank"
-          rel="noreferrer"
-          className={buttonVariants()}
-        >
-          Documentation
-        </Link>
-        <Link
-          target="_blank"
-          rel="noreferrer"
-          href={siteConfig.links.github}
-          className={buttonVariants({ variant: "outline" })}
-        >
-          GitHub
-        </Link>
-      </div>
-    </section>
-  )
+    <main className="flex min-h-screen flex-col items-center justify-center p-8 text-center">
+      <h1 className="text-4xl font-bold mb-4">DevType 테스트</h1>
+      <p className="text-lg mb-6">당신은 어떤 개발자일까요? 🤔</p>
+      <Link href="/quiz">
+        <button className="px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800">
+          테스트 시작하기
+        </button>
+      </Link>
+    </main>
+  );
 }
